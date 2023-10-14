@@ -10,3 +10,8 @@ select nombre, format(precio, 2) from tienda.producto;
 select nombre, format(precio, 0) from tienda.producto;
 select codigo_fabricante from tienda.producto;
 select distinct codigo_fabricante from tienda.producto;
+select nombre from tienda.fabricante order by nombre asc;
+select nombre from tienda.fabricante order by nombre desc;
+select nombre from tienda.producto order by nombre asc, precio desc;
+select * from tienda.fabricante limit 5;
+select * from tienda.fabricante limit 3, 2;
