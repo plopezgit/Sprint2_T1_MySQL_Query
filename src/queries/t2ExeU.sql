@@ -7,3 +7,6 @@ select upper(nombre), precio from tienda.producto;
 select lower(nombre), precio from tienda.producto;
 select nombre, substring(upper(nombre), 0, 1) as 'Extract of name' from tienda.fabricante;
 select nombre, format(precio, 2) from tienda.producto;
+select nombre, format(precio, 0) from tienda.producto;
+select codigo_fabricante from tienda.producto;
+select distinct codigo_fabricante from tienda.producto;
