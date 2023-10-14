@@ -27,3 +27,5 @@ select p.nombre from tienda.producto p join tienda.fabricante f where p.codigo_f
 select p.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre = 'crucial' and p.precio >200;
 -- select * from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo or f.nombre = 'Asus' or f.nombre = 'Hewlett-Packard'  or f.nombre = 'Seagate';
 select * from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre in('Asus','Hewlett-Packard', 'Seagate');
+select p.nombre, p.precio from tienda.producto p  join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre like '%e';
+select p.nombre, p.precio from tienda.producto p  join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre like '%w%';
