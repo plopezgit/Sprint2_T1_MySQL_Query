@@ -24,3 +24,6 @@ select p.nombre, p.precio, p.codigo_fabricante, f.nombre from tienda.producto p 
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo order by precio limit 1;
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo order by precio desc limit 1;
 select p.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre = 'lenovo';
+select p.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre = 'crucial' and p.precio >200;
+-- select * from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo or f.nombre = 'Asus' or f.nombre = 'Hewlett-Packard'  or f.nombre = 'Seagate';
+select * from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and f.nombre in('Asus','Hewlett-Packard', 'Seagate');
