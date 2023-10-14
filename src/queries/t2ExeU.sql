@@ -15,3 +15,5 @@ select nombre from tienda.fabricante order by nombre desc;
 select nombre from tienda.producto order by nombre asc, precio desc;
 select * from tienda.fabricante limit 5;
 select * from tienda.fabricante limit 3, 2;
+select nombre, precio from tienda.producto order by precio limit 1;
+select nombre, precio from tienda.producto order by precio desc limit 1;
