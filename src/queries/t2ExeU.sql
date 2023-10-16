@@ -37,3 +37,6 @@ select apellido1, apellido2, nombre from universidad.persona where tipo = 'alumn
 select nombre, apellido1, apellido2 from universidad.persona where tipo =  'alumno'  and telefono is null;
 select * from universidad.persona where tipo = 'alumno' and fecha_nacimiento like '1999%';
 select * from universidad.persona where tipo = 'profesor' and telefono is null and nif like '%k';
+select * from universidad.asignatura where cuatrimestre = 1 and curso = 3 and id_grado = 7;
+select p.apellido1, p.apellido2, p.nombre, dep.nombre from universidad.persona p join universidad.profesor prof on prof.id_profesor = p.id join universidad.departamento dep on  dep.id = prof.id_departamento;
+select p.nombre, a.nombre, ce.anyo_inicio, ce.anyo_fin from universidad.persona p join universidad.alumno_se_matricula_asignatura asma on p.id = asma.id_alumno join universidad.asignatura a on asma.id_asignatura = a.id join universidad.curso_escolar ce on asma.id_curso_escolar =  ce.id where nif = '26902806M';
