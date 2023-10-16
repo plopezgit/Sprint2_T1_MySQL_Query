@@ -32,7 +32,6 @@ select p.nombre, p.precio from tienda.producto p join tienda.fabricante f where 
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and p.precio >=180 order by p.precio desc, p.nombre;
 select distinct f.codigo, f.nombre from tienda.fabricante f join tienda.producto p where f.codigo = p.codigo_fabricante;
 select p.nombre, f.nombre from tienda.producto p left join tienda.fabricante f on p.codigo_fabricante = f.codigo union select p.nombre, f.nombre from tienda.producto p right join tienda.fabricante f on p.codigo_fabricante = f.codigo;
-
 select apellido1, apellido2, nombre from universidad.persona where tipo = 'alumno' order by apellido1, apellido2, nombre;
 select nombre, apellido1, apellido2 from universidad.persona where tipo =  'alumno'  and telefono is null;
 select * from universidad.persona where tipo = 'alumno' and fecha_nacimiento like '1999%';
@@ -40,3 +39,5 @@ select * from universidad.persona where tipo = 'profesor' and telefono is null a
 select * from universidad.asignatura where cuatrimestre = 1 and curso = 3 and id_grado = 7;
 select p.apellido1, p.apellido2, p.nombre, dep.nombre from universidad.persona p join universidad.profesor prof on prof.id_profesor = p.id join universidad.departamento dep on  dep.id = prof.id_departamento;
 select p.nombre, a.nombre, ce.anyo_inicio, ce.anyo_fin from universidad.persona p join universidad.alumno_se_matricula_asignatura asma on p.id = asma.id_alumno join universidad.asignatura a on asma.id_asignatura = a.id join universidad.curso_escolar ce on asma.id_curso_escolar =  ce.id where nif = '26902806M';
+select distinct d.nombre from universidad.departamento d join universidad.profesor pro on pro.id_departamento = d.id join universidad.asignatura a on a.id_profesor = pro.id_profesor join universidad.grado g on a.id_grado = g.id where g.nombre = 'Grado en Ingeniería Informática (Plan 2015)';
+select distinct p.nombre from universidad.persona p join universidad.alumno_se_matricula_asignatura asma on p.id = asma.id_alumno join universidad.curso_escolar ce on asma.id_curso_escolar = ce.id where ce.anyo_inicio between '2018%' and '2019%';
