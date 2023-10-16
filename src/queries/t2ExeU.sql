@@ -32,3 +32,8 @@ select p.nombre, p.precio from tienda.producto p join tienda.fabricante f where 
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and p.precio >=180 order by p.precio desc, p.nombre;
 select distinct f.codigo, f.nombre from tienda.fabricante f join tienda.producto p where f.codigo = p.codigo_fabricante;
 select p.nombre, f.nombre from tienda.producto p left join tienda.fabricante f on p.codigo_fabricante = f.codigo union select p.nombre, f.nombre from tienda.producto p right join tienda.fabricante f on p.codigo_fabricante = f.codigo;
+
+select apellido1, apellido2, nombre from universidad.persona where tipo = 'alumno' order by apellido1, apellido2, nombre;
+select nombre, apellido1, apellido2 from universidad.persona where tipo =  'alumno'  and telefono is null;
+select * from universidad.persona where tipo = 'alumno' and fecha_nacimiento like '1999%';
+select * from universidad.persona where tipo = 'profesor' and telefono is null and nif like '%k';
