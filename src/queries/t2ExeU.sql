@@ -54,3 +54,4 @@ select d.nombre, count(p.id) as Total_profesores from universidad.persona p righ
 select g.nombre, count(a.id) as Total_asignaturas from universidad.grado g left join universidad.asignatura a on g.id = a.id_grado group by g.nombre order by Total_asignaturas desc;
 select g.nombre, a.tipo, sum(a.creditos) as Total_creditos from universidad.grado g join universidad.asignatura a on g.id = a.id_grado group by a.tipo, g.nombre;
 select g.nombre, count(a.id) as Total_asignaturas from universidad.grado g left join universidad.asignatura a on g.id = a.id_grado group by g.nombre having Total_asignaturas >40;
+select ce.anyo_inicio, count(asma.id_alumno) as Total_alumnos_matriculados from universidad.alumno_se_matricula_asignatura asma right join universidad.curso_escolar ce on asma.id_curso_escolar = ce.id group by ce.anyo_inicio;

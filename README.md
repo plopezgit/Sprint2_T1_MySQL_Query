@@ -118,7 +118,7 @@
 
 - [x] Returns a list that shows the name of the degrees and the sum of the total number of existing credits for each type of subject. The result must have three columns: name of the degree, type of subject and the sum of the credits of all the subjects that exist of this type.
 
-- [ ] Returns a list that shows how many students have enrolled in a subject in each of the school years. The result will have to show two columns, one column with the start year of the school year and another with the number of enrolled students.
+- [x] Returns a list that shows how many students have enrolled in a subject in each of the school years. The result will have to show two columns, one column with the start year of the school year and another with the number of enrolled students.
 
 - [ ] Returns a list with the number of subjects taught by each teacher. The list must take into account those teachers who do not teach any subject. The result will show five columns: id, first name, first last name, second last name and number of subjects. The result will be ordered from highest to lowest by the number of subjects.
 
