@@ -58,3 +58,6 @@ select ce.anyo_inicio, count(asma.id_alumno) as Total_alumnos_matriculados from 
 select p.id, p.nombre, p.apellido1, p.apellido2, count(a.id) as Total_asignaturas from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor join universidad.asignatura a on pro.id_profesor = a.id_profesor group by p.id, p.nombre, p.apellido1, p.apellido2 order by Total_asignaturas desc;
 select * from universidad.persona where fecha_nacimiento = (select max(fecha_nacimiento) from universidad.persona);
 select p.id, p.nombre from universidad.persona p left join universidad.profesor pro on p.id = pro.id_profesor left join universidad.asignatura a on pro.id_profesor = a.id_profesor where pro.id_departamento is not null and a.id_profesor is null;
+select nombre from tienda.producto where precio = (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo');
+select nombre from tienda.producto where precio = (select min(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'Hewlett-Packard');
+select nombre from tienda.producto where precio >= (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo') ;

@@ -70,6 +70,20 @@
 
 - [x] Returns a list of all the manufacturers that exist in the database, along with the products that each of them has. The list must also show those manufacturers that do not have associated products.
 
+- [ ] Returns a list in which only those manufacturers that do not have any associated product appear.
+
+- [ ] Return all products from the Lenovo manufacturer. (Without using INNER JOIN).
+
+- [ ] Returns all data for products that have the same price as the most expensive product from the manufacturer Lenovo. (Without using INNER JOIN).
+
+- [x] List the name of the most expensive product from the manufacturer Lenovo.
+
+- [x] List the name of the cheapest product from the manufacturer Hewlett-Packard.
+
+- [x] Returns all products in the database that have a price greater than or equal to the most expensive product from the manufacturer Lenovo.
+
+- [ ] Lists all products from the manufacturer Asus that have a price higher than the average price of all its products.
+
 
 **University database**
 
