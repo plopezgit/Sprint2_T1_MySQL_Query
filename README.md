@@ -124,4 +124,4 @@
 
 - [x] Returns all the data of the youngest student.
 
-- [ ] Returns a list of teachers who have an associated department and who do not teach any subject.
+- [x] Returns a list of teachers who have an associated department and who do not teach any subject.
