@@ -114,7 +114,7 @@
 
 - [x] Returns a list with the name of all the degrees existing in the database and the number of subjects each one has. Keep in mind that there may be degrees that lack associated subjects. These grades must also appear on the list. The result must be ordered from highest to lowest by the number of subjects.
 
-- [ ] Returns a list with the name of all the degrees existing in the database and the number of subjects that each one has, of the degrees that have more than 40 associated subjects.
+- [x] Returns a list with the name of all the degrees existing in the database and the number of subjects that each one has, of the degrees that have more than 40 associated subjects.
 
 - [x] Returns a list that shows the name of the degrees and the sum of the total number of existing credits for each type of subject. The result must have three columns: name of the degree, type of subject and the sum of the credits of all the subjects that exist of this type.
 
