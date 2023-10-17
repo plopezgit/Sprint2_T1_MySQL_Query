@@ -82,7 +82,7 @@
 
 - [x] Returns all products in the database that have a price greater than or equal to the most expensive product from the manufacturer Lenovo.
 
-- [ ] Lists all products from the manufacturer Asus that have a price higher than the average price of all its products.
+- [x] Lists all products from the manufacturer Asus that have a price higher than the average price of all its products.
 
 
 **University database**

@@ -32,6 +32,10 @@ select p.nombre, p.precio from tienda.producto p join tienda.fabricante f where 
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and p.precio >=180 order by p.precio desc, p.nombre;
 select distinct f.codigo, f.nombre from tienda.fabricante f join tienda.producto p where f.codigo = p.codigo_fabricante;
 select p.nombre, f.nombre from tienda.producto p left join tienda.fabricante f on p.codigo_fabricante = f.codigo union select p.nombre, f.nombre from tienda.producto p right join tienda.fabricante f on p.codigo_fabricante = f.codigo;
+select nombre from tienda.producto where precio = (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo');
+select nombre from tienda.producto where precio = (select min(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'Hewlett-Packard');
+select nombre from tienda.producto where precio >= (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo') ;
+select nombre from tienda.producto where precio > (select avg(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'Asus');
 select apellido1, apellido2, nombre from universidad.persona where tipo = 'alumno' order by apellido1, apellido2, nombre;
 select nombre, apellido1, apellido2 from universidad.persona where tipo =  'alumno'  and telefono is null;
 select * from universidad.persona where tipo = 'alumno' and fecha_nacimiento like '1999%';
@@ -58,6 +62,3 @@ select ce.anyo_inicio, count(asma.id_alumno) as Total_alumnos_matriculados from 
 select p.id, p.nombre, p.apellido1, p.apellido2, count(a.id) as Total_asignaturas from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor join universidad.asignatura a on pro.id_profesor = a.id_profesor group by p.id, p.nombre, p.apellido1, p.apellido2 order by Total_asignaturas desc;
 select * from universidad.persona where fecha_nacimiento = (select max(fecha_nacimiento) from universidad.persona);
 select p.id, p.nombre from universidad.persona p left join universidad.profesor pro on p.id = pro.id_profesor left join universidad.asignatura a on pro.id_profesor = a.id_profesor where pro.id_departamento is not null and a.id_profesor is null;
-select nombre from tienda.producto where precio = (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo');
-select nombre from tienda.producto where precio = (select min(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'Hewlett-Packard');
-select nombre from tienda.producto where precio >= (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo') ;
