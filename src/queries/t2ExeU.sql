@@ -32,6 +32,9 @@ select p.nombre, p.precio from tienda.producto p join tienda.fabricante f where 
 select p.nombre, p.precio, f.nombre from tienda.producto p join tienda.fabricante f where p.codigo_fabricante = f.codigo and p.precio >=180 order by p.precio desc, p.nombre;
 select distinct f.codigo, f.nombre from tienda.fabricante f join tienda.producto p where f.codigo = p.codigo_fabricante;
 select p.nombre, f.nombre from tienda.producto p left join tienda.fabricante f on p.codigo_fabricante = f.codigo union select p.nombre, f.nombre from tienda.producto p right join tienda.fabricante f on p.codigo_fabricante = f.codigo;
+select f.nombre from tienda.fabricante f left join tienda.producto p on f.codigo = p.codigo_fabricante where p.codigo_fabricante is null;
+select * from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo';
+select * from tienda.producto where precio = (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo');
 select nombre from tienda.producto where precio = (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo');
 select nombre from tienda.producto where precio = (select min(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'Hewlett-Packard');
 select nombre from tienda.producto where precio >= (select max(p.precio) from tienda.producto p join tienda.fabricante f on p.codigo_fabricante = f.codigo where f.nombre like 'lenovo') ;
