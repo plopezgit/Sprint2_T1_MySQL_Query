@@ -52,4 +52,4 @@ select count(id) as 'Total nacidos en 1999' from universidad.persona where fecha
 select d.nombre, count(p.id) as Total_profesores from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor join universidad.departamento d on pro.id_departamento = d.id group by d.nombre order by Total_profesores desc;
 select d.nombre, count(p.id) as Total_profesores from universidad.persona p right join universidad.profesor pro on p.id = pro.id_profesor right join universidad.departamento d on pro.id_departamento = d.id group by d.nombre order by Total_profesores desc;
 select g.nombre, count(a.id) as Total_asignaturas from universidad.grado g left join universidad.asignatura a on g.id = a.id_grado group by g.nombre order by Total_asignaturas desc;
-select g.nombre, sum(a.creditos) as Total_creditos from universidad.grado g join universidad.asignatura a on g.id = a.id_grado group by g.nombre;
+select g.nombre, a.tipo, sum(a.creditos) as Total_creditos from universidad.grado g join universidad.asignatura a on g.id = a.id_grado group by a.tipo, g.nombre;
