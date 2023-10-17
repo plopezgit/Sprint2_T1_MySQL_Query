@@ -1,4 +1,4 @@
-#Sprint2_T2_MySQL_Query
+# Sprint2_T2_MySQL_Query
 
 **Store Database**
 
