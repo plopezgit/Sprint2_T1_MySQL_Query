@@ -43,3 +43,6 @@ select distinct d.nombre from universidad.departamento d join universidad.profes
 select distinct p.* from universidad.persona p join universidad.alumno_se_matricula_asignatura asma on p.id = asma.id_alumno join universidad.curso_escolar ce on asma.id_curso_escolar = ce.id where ce.anyo_inicio between '2018%' and '2019%';
 select d.nombre, p.apellido1, p.apellido2, p.nombre from universidad.persona p left join universidad.profesor pro on p.id = pro.id_profesor left join universidad.departamento d on pro.id_departamento = d.id order by d.nombre, p.apellido1, p.apellido2, p.nombre;
 select p.apellido1, p.apellido2, p.nombre from universidad.persona p left join universidad.profesor pro on p.id = pro.id_profesor left join universidad.departamento d on pro.id_departamento = d.id where d.nombre is null;
+select d.* from universidad.departamento d left join universidad.profesor pro on d.id = pro.id_departamento where d.id not in (select id_departamento from universidad.profesor);
+select p.* from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor left join universidad.asignatura a on pro.id_profesor = a.id_profesor where a.id_profesor is null;
+select a.* from universidad.asignatura a left join universidad.profesor pro on a.id_profesor = pro.id_profesor where a.id_profesor is null;
