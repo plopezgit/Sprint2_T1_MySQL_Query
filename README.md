@@ -122,6 +122,6 @@
 
 - [x] Returns a list with the number of subjects taught by each teacher. The list must take into account those teachers who do not teach any subject. The result will show five columns: id, first name, first last name, second last name and number of subjects. The result will be ordered from highest to lowest by the number of subjects.
 
-- [ ] Returns all the data of the youngest student.
+- [x] Returns all the data of the youngest student.
 
 - [ ] Returns a list of teachers who have an associated department and who do not teach any subject.
