@@ -46,3 +46,8 @@ select p.apellido1, p.apellido2, p.nombre from universidad.persona p left join u
 select d.* from universidad.departamento d left join universidad.profesor pro on d.id = pro.id_departamento where d.id not in (select id_departamento from universidad.profesor);
 select p.* from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor left join universidad.asignatura a on pro.id_profesor = a.id_profesor where a.id_profesor is null;
 select a.* from universidad.asignatura a left join universidad.profesor pro on a.id_profesor = pro.id_profesor where a.id_profesor is null;
+select d.* from universidad.departamento d right join universidad.profesor pro on d.id = pro.id_departamento right join universidad.asignatura a on pro.id_profesor = a.id_profesor where a.curso is null;
+select count(id) as 'Total alumnos' from universidad.persona where tipo = 'alumno';
+select count(id) as 'Total nacidos en 1999' from universidad.persona where fecha_nacimiento like '1999%';
+select d.nombre, count(p.id) as Total_profesores from universidad.persona p join universidad.profesor pro on p.id = pro.id_profesor join universidad.departamento d on pro.id_departamento = d.id group by d.nombre order by Total_profesores desc;
+select d.nombre, count(p.id) as Total_profesores from universidad.persona p right join universidad.profesor pro on p.id = pro.id_profesor right join universidad.departamento d on pro.id_departamento = d.id group by d.nombre order by Total_profesores desc;
